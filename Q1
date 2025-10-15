@@ -1,0 +1,22 @@
+import 'dart:io';
+
+void main() {
+  stdout.write('Enter a number: ');
+  int number = int.parse(stdin.readLineSync()!);
+
+  // Check if the number is even or odd
+  if (number % 2 == 0) {
+    print('$number is Even');
+  } else {
+    print('$number is Odd');
+  }
+
+  stdout.write('Would you like to check another number? (yes/no): ');
+  String response = stdin.readLineSync()!;
+  
+  if (response.toLowerCase() == 'yes') {
+    main(); // Recursively call main to restart the process
+  } else {
+    print('Goodbye!');
+  }
+}
